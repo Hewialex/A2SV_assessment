@@ -5,7 +5,7 @@ class GroceriesEntity extends Equatable {
   final String title;
   final String imageUrl;
   final double rating;
-  final double price;
+  final String price;
   final double discount;
   final String description;
 

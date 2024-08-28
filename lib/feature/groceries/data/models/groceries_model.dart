@@ -15,7 +15,7 @@ class GroceriesModel extends GroceriesEntity {
           title: title,
           imageUrl: imageUrl,
           rating: rating,
-          price: price,
+          price: price.toString(),
           discount: discount,
           description: description,
         );
@@ -27,7 +27,7 @@ class GroceriesModel extends GroceriesEntity {
       title: json['title'] as String? ?? '',
       imageUrl: json['imageUrl'] as String? ?? '',
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
-      price: (json['price'] as num?)?.toDouble() ?? 0.0,
+      price: double.parse(json['price'] as String? ?? '0.0'), // Convert price to double
       discount: (json['discount'] as num?)?.toDouble() ?? 0.0,
       description: json['description'] as String? ?? '',
     );
@@ -53,7 +53,7 @@ class GroceriesModel extends GroceriesEntity {
       title: grocery.title,
       imageUrl: grocery.imageUrl,
       rating: grocery.rating,
-      price: grocery.price,
+      price: double.parse(grocery.price),
       discount: grocery.discount,
       description: grocery.description,
     );
